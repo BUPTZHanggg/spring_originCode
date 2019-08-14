@@ -59,12 +59,12 @@ import com.atguigu.bean.Car;
  * @author lfy
  *
  */
-@ComponentScan("com.atguigu.bean")
+//@ComponentScan("com.atguigu.bean")
 @Configuration
 public class MainConfigOfLifeCycle {
 	
 	//@Scope("prototype")
-	@Bean(initMethod="init",destroyMethod="detory")
+	@Bean(initMethod = "init", destroyMethod = "destroy")
 	public Car car(){
 		return new Car();
 	}
