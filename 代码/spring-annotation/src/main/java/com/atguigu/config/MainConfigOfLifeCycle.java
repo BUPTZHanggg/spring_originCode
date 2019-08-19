@@ -1,10 +1,11 @@
 package com.atguigu.config;
 
+import com.atguigu.bean.Cat;
+import com.atguigu.bean.Dog;
+import com.atguigu.bean.MyBeanPostProcessor;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 
 import com.atguigu.bean.Car;
 
@@ -59,10 +60,11 @@ import com.atguigu.bean.Car;
  * @author lfy
  *
  */
-//@ComponentScan("com.atguigu.bean")
+@ComponentScan(value = "com.atguigu.bean",includeFilters =
+		{@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,value = {Cat.class, Dog.class, MyBeanPostProcessor.class})},useDefaultFilters = false)
 @Configuration
 public class MainConfigOfLifeCycle {
-	
+
 	//@Scope("prototype")
 	@Bean(initMethod = "init", destroyMethod = "destroy")
 	public Car car(){

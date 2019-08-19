@@ -57,28 +57,7 @@ import com.atguigu.dao.BookDao;
  */
 @Configuration
 @ComponentScan({"com.atguigu.service","com.atguigu.dao",
-	"com.atguigu.controller","com.atguigu.bean"})
+	"com.atguigu.controller"})
 public class MainConifgOfAutowired {
-	
-	@Primary
-	@Bean("bookDao2")
-	public BookDao bookDao(){
-		BookDao bookDao = new BookDao();
-		bookDao.setLable("2");
-		return bookDao;
-	}
-	
-	/**
-	 * @Bean标注的方法创建对象的时候，方法参数的值从容器中获取
-	 * @param car
-	 * @return
-	 */
-	@Bean
-	public Color color(Car car){
-		Color color = new Color();
-		color.setCar(car);
-		return color;
-	}
-	
 
 }

@@ -19,18 +19,9 @@ public class IOCTest_Autowired {
 		
 		BookService bookService = applicationContext.getBean(BookService.class);
 		System.out.println(bookService);
-		
-		//BookDao bean = applicationContext.getBean(BookDao.class);
-		//System.out.println(bean);
-		
-		Boss boss = applicationContext.getBean(Boss.class);
-		System.out.println(boss);
-		Car car = applicationContext.getBean(Car.class);
-		System.out.println(car);
-		
-		Color color = applicationContext.getBean(Color.class);
-		System.out.println(color);
-		System.out.println(applicationContext);
+
+		BookDao bean = applicationContext.getBean(BookDao.class);
+		System.out.println(bean);
 		applicationContext.close();
 	}
 

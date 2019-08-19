@@ -10,8 +10,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Dog implements ApplicationContextAware {
-	
+public class Dog implements ApplicationContextAware{
 	//@Autowired
 	private ApplicationContext applicationContext;
 	
@@ -31,13 +30,8 @@ public class Dog implements ApplicationContextAware {
 		System.out.println("Dog....@PreDestroy...");
 	}
 
-	@Override
+
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		// TODO Auto-generated method stub
 		this.applicationContext = applicationContext;
 	}
-
-
-	
-
 }
