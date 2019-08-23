@@ -16,13 +16,20 @@ public class IOCTest_Autowired {
 	@Test
 	public void test01(){
 		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConifgOfAutowired.class);
-		
-		BookService bookService = applicationContext.getBean(BookService.class);
-		System.out.println(bookService);
+		System.out.println(applicationContext);
+//		BookService bookService = applicationContext.getBean(BookService.class);
+//		System.out.println(bookService);
+//
+//		BookDao bean = applicationContext.getBean(BookDao.class);
+//		System.out.println(bean);
+//		applicationContext.close();
+//		Boss bean = applicationContext.getBean(Boss.class);
+//		System.out.println(bean);
+//		Car bean1 = applicationContext.getBean(Car.class);
+//		System.out.println(bean1);
+//		Color bean2 = applicationContext.getBean(Color.class);
+//		System.out.println(bean2);
 
-		BookDao bean = applicationContext.getBean(BookDao.class);
-		System.out.println(bean);
-		applicationContext.close();
 	}
 
 }

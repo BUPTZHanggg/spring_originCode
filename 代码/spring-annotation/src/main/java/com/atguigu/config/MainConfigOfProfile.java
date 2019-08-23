@@ -52,7 +52,7 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware{
 		ComboPooledDataSource dataSource = new ComboPooledDataSource();
 		dataSource.setUser(user);
 		dataSource.setPassword(pwd);
-		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/megvii");
 		dataSource.setDriverClass(driverClass);
 		return dataSource;
 	}
@@ -64,7 +64,7 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware{
 		ComboPooledDataSource dataSource = new ComboPooledDataSource();
 		dataSource.setUser(user);
 		dataSource.setPassword(pwd);
-		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/ssm_crud");
+		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/clouddb01");
 		dataSource.setDriverClass(driverClass);
 		return dataSource;
 	}
@@ -75,13 +75,12 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware{
 		ComboPooledDataSource dataSource = new ComboPooledDataSource();
 		dataSource.setUser(user);
 		dataSource.setPassword(pwd);
-		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/scw_0515");
+		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/clouddb02");
 		
 		dataSource.setDriverClass(driverClass);
 		return dataSource;
 	}
 
-	@Override
 	public void setEmbeddedValueResolver(StringValueResolver resolver) {
 		// TODO Auto-generated method stub
 		this.valueResolver = resolver;

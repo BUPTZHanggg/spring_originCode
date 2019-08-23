@@ -1,11 +1,10 @@
 package com.atguigu.config;
 
+import com.atguigu.bean.Boss;
+import com.atguigu.bean.Red;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.*;
 
 import com.atguigu.bean.Car;
 import com.atguigu.bean.Color;
@@ -48,7 +47,7 @@ import com.atguigu.dao.BookDao;
  * 4）、自定义组件想要使用Spring容器底层的一些组件（ApplicationContext，BeanFactory，xxx）；
  * 		自定义组件实现xxxAware；在创建对象的时候，会调用接口规定的方法注入相关组件；Aware；
  * 		把Spring底层一些组件注入到自定义的Bean中；
- * 		xxxAware：功能使用xxxProcessor；
+ * 		xxxAware：功能使用xxxAwareProcessor；
  * 			ApplicationContextAware==》ApplicationContextAwareProcessor；
  * 	
  * 		
@@ -56,8 +55,29 @@ import com.atguigu.dao.BookDao;
  *
  */
 @Configuration
-@ComponentScan({"com.atguigu.service","com.atguigu.dao",
-	"com.atguigu.controller"})
+@ComponentScan(value = {"com.atguigu.service","com.atguigu.dao",
+	"com.atguigu.controller","com.atguigu.bean"},
+		includeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,value = {Red.class})},
+		useDefaultFilters = false)
 public class MainConifgOfAutowired {
 
+	@Primary
+	@Bean(value = "bookDao2")
+	public BookDao bookDao(){
+		BookDao bookDao =  new BookDao();
+		bookDao.setLable("2");
+		return bookDao;
+	}
+
+//	/**
+//	 * Car可以从ioc容器中获取 不需要任何注解
+//	 * @param car
+//	 * @return
+//	 */
+//	@Bean
+//	public Color color(Car car){
+//		Color color = new Color();
+//		color.setCar(car);
+//		return color;
+//	}
 }
