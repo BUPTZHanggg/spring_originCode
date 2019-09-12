@@ -15,7 +15,6 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
 	 * 		把所有需要添加到容器中的bean；调用
 	 * 		BeanDefinitionRegistry.registerBeanDefinition手工注册进来
 	 */
-	@Override
 	public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
 		
 		boolean definition = registry.containsBeanDefinition("com.atguigu.bean.Red");

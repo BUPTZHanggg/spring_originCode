@@ -73,9 +73,9 @@ public class TxConfig {
 	public DataSource dataSource() throws Exception{
 		ComboPooledDataSource dataSource = new ComboPooledDataSource();
 		dataSource.setUser("root");
-		dataSource.setPassword("123456");
+		dataSource.setPassword("538600");
 		dataSource.setDriverClass("com.mysql.jdbc.Driver");
-		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/jdbc?characterEncoding=utf8&useSSL=false");
 		return dataSource;
 	}
 	

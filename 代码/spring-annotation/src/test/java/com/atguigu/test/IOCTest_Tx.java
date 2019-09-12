@@ -1,5 +1,6 @@
 package com.atguigu.test;
 
+import com.atguigu.config.MainConfigOfLifeCycle;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -20,7 +21,7 @@ public class IOCTest_Tx {
 	@Test
 	public void test01(){
 		AnnotationConfigApplicationContext applicationContext = 
-				new AnnotationConfigApplicationContext(TxConfig.class);
+				new AnnotationConfigApplicationContext(MainConfigOfLifeCycle.class);
 	
 		UserService userService = applicationContext.getBean(UserService.class);
 		

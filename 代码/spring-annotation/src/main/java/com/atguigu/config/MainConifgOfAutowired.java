@@ -2,6 +2,7 @@ package com.atguigu.config;
 
 import com.atguigu.bean.Boss;
 import com.atguigu.bean.Red;
+import com.atguigu.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
@@ -57,7 +58,7 @@ import com.atguigu.dao.BookDao;
 @Configuration
 @ComponentScan(value = {"com.atguigu.service","com.atguigu.dao",
 	"com.atguigu.controller","com.atguigu.bean"},
-		includeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,value = {Red.class})},
+		includeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,value = {BookService.class,BookDao.class})},
 		useDefaultFilters = false)
 public class MainConifgOfAutowired {
 
